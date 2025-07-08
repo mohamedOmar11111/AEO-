@@ -19,6 +19,7 @@
             --shadow-medium: rgba(0,0,0,0.15);
         }
 
+        /* Added font-display=swap to ensure better font loading */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
         body {
             font-family: 'Cairo', sans-serif;
@@ -92,7 +93,6 @@
             transform: rotate(180deg); /* Rotate when active */
         }
         .step-content {
-            /* Removed display: none; to allow max-height transition */
             overflow: hidden;
             transition: max-height 0.5s ease-out, padding 0.5s ease-out, margin-top 0.5s ease-out;
             max-height: 0; /* Starts collapsed */
@@ -100,7 +100,6 @@
             border-top: 1px solid #eee;
             margin-top: 0;
         }
-        /* .step-content.active class will be handled by JS setting max-height */
         .step-content.active {
             padding-top: 15px;
             margin-top: 15px;
@@ -429,7 +428,7 @@
                     <li><i class="fas fa-check-circle"></i><strong>اربط بالشهادات والسير الذاتية:</strong> قم بإنشاء صفحة سيرة ذاتية مفصلة للمؤلف واربط بها من كل مقال. قم بتضمين روابط للملفات الشخصية على الشبكات الاجتماعية المهنية مثل LinkedIn.</li>
                     <li><i class="fas fa-check-circle"></i><strong>ادعم ادعاءاتك:</strong> لا تقدم ادعاءات بدون دليل. استشهد بمصادر موثوقة، وأشر إلى دراسات الحالة، وقدم بيانات وإحصاءات لدعم نقاطك.</li>
                     <li><i class="fas fa-check-circle"></i><strong>استخدم العناوين المنظمة:</strong> يساعد استخدام H1, H2, H3 بشكل صحيح في تنظيم المحتوى وجعله أسهل في الفهم لكل من المستخدمين ومحركات البحث.</li>
-                </ul>
+                    </ul>
                 <p>تذكر دائمًا: المحتوى المجهول المصدر يفتقر إلى المصداقية. لا يوجد اسم = لا ثقة.</p>
             </div>
         </div>
