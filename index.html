@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كيفية تحسين المحتوى لـ AEO - Menaverse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Trendy Color Palette Variables */
+        :root {
+            --primary-bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --primary-text: #343A40;
+            --secondary-text: #6C757D;
+            --brand-purple: #6C63FF;
+            --brand-purple-light: #8E88FF;
+            --accent-teal: #20C997;
+            --shadow-light: rgba(0,0,0,0.08);
+            --shadow-medium: rgba(0,0,0,0.15);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            scroll-behavior: smooth; /* For smooth scrolling to anchor links */
+        }
+        .container {
+            max-width: 900px; /* Slightly wider container */
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--brand-purple), var(--brand-purple-light));
+            color: white;
+            padding: 80px 20px; /* More vertical padding */
+            text-align: center;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            box-shadow: 0 4px 15px var(--shadow-medium);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em; /* Larger heading */
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .header p {
+            font-size: 1.4em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        .step {
+            background-color: var(--card-bg);
+            margin-bottom: 25px; /* More spacing between steps */
+            padding: 25px;
+            border-radius: 18px; /* Softer rounded corners */
+            box-shadow: 0 6px 18px var(--shadow-light); /* Refined shadow */
+            cursor: pointer;
+            transition: all 0.4s ease; /* Smoother transition */
+            border-right: 6px solid var(--brand-purple); /* Thicker, trendier border */
+        }
+        .step:hover {
+            transform: translateY(-7px); /* More pronounced lift on hover */
+            box-shadow: 0 10px 20px var(--shadow-medium);
+        }
+        .step h2 {
+            margin-top: 0;
+            color: var(--brand-purple); /* Brand color for headings */
+            display: flex;
+            align-items: center;
+            font-size: 1.8em; /* Slightly larger step titles */
+            position: relative; /* For positioning the chevron icon */
+        }
+        .step h2 i.section-icon { /* Specific class for the main section icon */
+            margin-left: 18px; /* More space for icon */
+            font-size: 1.3em;
+            color: var(--brand-purple-light);
+        }
+        .step h2 i.chevron-icon { /* Style for the chevron icon */
+            position: absolute;
+            left: 20px; /* Position on the left for RTL */
+            font-size: 1em;
+            color: var(--secondary-text);
+            transition: transform 0.3s ease;
+        }
+        .step.active h2 i.chevron-icon {
+            transform: rotate(180deg); /* Rotate when active */
+        }
+        .step-content {
+            /* Removed display: none; to allow max-height transition */
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out, margin-top 0.5s ease-out;
+            max-height: 0; /* Starts collapsed */
+            padding-top: 0;
+            border-top: 1px solid #eee;
+            margin-top: 0;
+        }
+        /* .step-content.active class will be handled by JS setting max-height */
+        .step-content.active {
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        .step-content p {
+            font-size: 1.1em;
+            color: var(--secondary-text);
+        }
+        .step-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        .step-content li {
+            padding-right: 40px; /* More space for icon */
+            margin-bottom: 15px; /* More spacing between list items */
+            position: relative;
+            font-size: 1.05em;
+            color: var(--primary-text);
+        }
+        .step-content li i {
+            position: absolute;
+            right: 0;
+            top: 4px; /* Adjust icon vertical alignment */
+            color: var(--accent-teal); /* Trendy accent color for checkmarks */
+            font-size: 1.1em;
+        }
+        .infographic {
+            text-align: center;
+            padding: 30px 0; /* More padding */
+            margin-top: 20px;
+            background-color: var(--primary-bg); /* Match body background */
+            border-radius: 15px;
+        }
+        .infographic .circle {
+            width: 140px; /* Larger circles */
+            height: 140px;
+            border-radius: 50%;
+            background-color: var(--brand-purple);
+            color: white;
+            display: inline-flex; /* Keep circles inline */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 15px; /* More margin */
+            font-size: 1.2em; /* Larger text */
+            font-weight: bold;
+            box-shadow: 0 4px 10px var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+        .infographic .circle:hover {
+            transform: scale(1.05); /* Slight hover effect */
+        }
+        .infographic .circle span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* New Infographic: AEO Content Flow */
+        .infographic.aeo-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 10px;
+        }
+        .flow-item {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px var(--shadow-light);
+            text-align: center;
+            width: 180px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-weight: bold;
+            color: var(--brand-purple);
+            font-size: 1.1em;
+        }
+        .flow-item i {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--brand-purple-light);
+        }
+        .flow-arrow {
+            font-size: 2em;
+            color: var(--secondary-text);
+        }
+        .flow-arrow.rtl {
+            transform: rotate(180deg); /* Flip arrow for RTL */
+        }
+
+        /* Back to Top Button */
+        #backToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            bottom: 30px; /* Place at the bottom */
+            left: 30px; /* Place at the left */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: var(--brand-purple); /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px 18px; /* Some padding */
+            border-radius: 50%; /* Rounded shape */
+            font-size: 1.2em; /* Increase font size */
+            box-shadow: 0 4px 12px var(--shadow-medium);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            background-color: var(--brand-purple-light); /* Darker on hover */
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            font-size: 1em;
+            color: var(--secondary-text);
+            background-color: var(--card-bg);
+            border-top: 1px solid #eee;
+            box-shadow: 0 -2px 10px var(--shadow-light);
+        }
+        .footer a {
+            color: var(--brand-purple);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: var(--brand-purple-light);
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            .header p {
+                font-size: 1.1em;
+            }
+            .step {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .step h2 {
+                font-size: 1.5em;
+                flex-direction: row-reverse; /* Icons on the right for RTL */
+            }
+            .step h2 i.section-icon {
+                margin-right: 10px;
+                margin-left: 0;
+            }
+            .step h2 i.chevron-icon {
+                left: auto; /* Reset left positioning */
+                right: 20px; /* Position on the right for RTL on mobile */
+            }
+            .step-content p, .step-content li {
+                font-size: 1em;
+            }
+            .step-content li {
+                padding-right: 30px; /* Adjust for smaller screens */
+            }
+            .infographic .circle {
+                width: 100px;
+                height: 100px;
+                font-size: 1em;
+                margin: 10px;
+            }
+            .flow-item {
+                width: 150px;
+                padding: 15px;
+                font-size: 1em;
+            }
+            .flow-item i {
+                font-size: 2em;
+            }
+            .flow-arrow {
+                font-size: 1.5em;
+                display: none; /* Hide arrows on very small screens or make them vertical */
+            }
+            .infographic.aeo-flow {
+                flex-direction: column; /* Stack flow items vertically */
+            }
+            .flow-item:not(:last-child)::after {
+                content: '↓'; /* Vertical arrow for stacked items */
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 1.5em;
+                color: var(--secondary-text);
+            }
+            .flow-item:last-child::after {
+                content: none;
+            }
+             #backToTopBtn {
+                bottom: 20px;
+                left: 20px;
+                padding: 12px 15px;
+                font-size: 1em;
+            }
+        }
+
+        /* Additional Mobile adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .header p {
+                font-size: 1em;
+            }
+            .container {
+                padding: 15px;
+            }
+            .step h2 {
+                font-size: 1.3em;
+            }
+            .infographic .circle {
+                width: 80px;
+                height: 80px;
+                font-size: 0.9em;
+                margin: 8px;
+            }
+             .flow-item {
+                width: 90%; /* Take more width */
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="topFunction()" id="backToTopBtn" title="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="header">
+        <h1>كيفية تحسين المحتوى لمحركات الإجابة (AEO)</h1>
+        <p>دليل خبيرك لتحسين محركات الإجابة في عصر الذكاء الاصطناعي</p>
+    </div>
+
+    <div class="container">
+        <div class="step" onclick="toggleStep(this)">
+            <h2>
+                <i class="fas fa-robot section-icon"></i>
+                مقدمة: وضع الذكاء الاصطناعي الجديد من جوجل
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </h2>
+            <div class="step-content">
+                <p>لقد تطور البحث بشكل كبير. لم يعد الأمر يقتصر على الكلمات الرئيسية والروابط الخلفية. مع إطلاق جوجل لوضع الذكاء الاصطناعي في مؤتمر I/O 2025، دخلنا عصر البحث الحواري المدعوم من Gemini 2.5. هذا يعني أن جوجل يفهم الآن السياق والقصد بشكل أعمق بكثير.</p>
+                <p>الآن، بدلاً من مجرد قائمة من الروابط الزرقاء، يحصل المستخدمون على:</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i><strong>إجابات مفصلة وشاملة:</strong> لم يعد المستخدمون بحاجة إلى النقر على عدة روابط لتجميع المعلومات. يقدم الذكاء الاصطناعي إجابات متكاملة مباشرة في صفحة النتائج.</li>
+                    <li><i class="fas fa-check-circle"></i><strong>عناصر تفاعلية غنية:</strong> يمكن أن تظهر النتائج الآن كمخططات تفاعلية، لوحات مقارنة للمنتجات، أو حتى أدوات حاسبة صغيرة، مما يوفر تجربة أكثر ثراءً.</li>
+                    <li><i class="fas fa-check-circle"></i><strong>بيانات حية وموثوقة:</strong> يعتمد الذكاء الاصطناعي على جلب البيانات في الوقت الفعلي من مصادر موثوقة لضمان دقة الإجابات وحداثتها.</li>
+                </ul>
+                <p>لكي يتم عرض المحتوى الخاص بك في هذه النتائج المتقدمة، يجب أن يثق به جوجل. الثقة هي العملة الجديدة في عالم البحث.</p>
+                <h3>كيف يعمل AEO (مخطط تدفق المحتوى)</h3>
+                <div class="infographic aeo-flow">
+                    <div class="flow-item">
+                        <i class="fas fa-feather-alt"></i>
+                        <span>إنشاء محتوى عالي الجودة</span>
+                    </div>
+                    <div class="flow-arrow rtl"><i class="fas fa-long-arrow-alt-left"></i></div>
+                    <div class="flow-item">
+                        <i class="fas fa-brain"></i>
+                        <span>فهم الذكاء الاصطناعي وE-E-A-T</span>
+                    </div>
+                    <div class="flow-arrow rtl"><i class="fas fa-long-arrow-alt-left"></i></div>
+                    <div class="flow-item">
+                        <i class="fas fa-search"></i>
+                        <span>فهرسة جوجل وتحليله</span>
+                    </div>
+                    <div class="flow-arrow rtl"><i class="fas fa-long-arrow-alt-left"></i></div>
+                    <div class="flow-item">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>عرض كإجابة مدعومة بالذكاء الاصطناعي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" onclick="toggleStep(this)">
+            <h2>
+                <i class="fas fa-medal section-icon"></i>
+                الخطوة 1: إظهار الخبرة الحقيقية (E-E-A-T)
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </h2>
+            <div class="step-content">
+                <p>تستخدم جوجل إطار E-E-A-T (الخبرة، الخبرة، السلطة، الموثوقية) لتقييم جودة المحتوى. هذا هو أساس بناء الثقة مع جوجل:</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i><strong>الخبرة (Experience):</strong> هل لديك تجربة مباشرة وحقيقية مع الموضوع؟ على سبيل المثال، إذا كنت تكتب مراجعة لمنتج، فهل استخدمته بالفعل؟ المحتوى الذي يظهر تجربة شخصية يكون أكثر قيمة.</li>
+                    <li><i class="fas fa-check-circle"></i><strong>الخبرة (Expertise):</strong> هل لديك المعرفة والمهارات اللازمة للحديث عن هذا الموضوع؟ هذا يظهر من خلال عمق المحتوى ودقته واستخدام المصطلحات الصحيحة.</li>
+                    <li><i class="fas fa-check-circle"></i><strong>السلطة (Authoritativeness):</strong> هل أنت أو موقعك معترف به كسلطة في هذا المجال؟ يتم بناء السلطة من خلال الإشارات من مواقع أخرى موثوقة، والشهادات، والجوائز.</li>
+                    <li><i class="fas fa-check-circle"></i><strong>الموثوقية (Trustworthiness):</strong> هل يمكن للمستخدمين الوثوق بالمحتوى الخاص بك؟ هذا يشمل كل شيء من دقة المعلومات إلى أمان موقع الويب الخاص بك (HTTPS) وشفافية معلومات الاتصال.</li>
+                </ul>
+                <p>إن إتقان E-E-A-T ليس مجرد خيار، بل هو ضرورة لزيادة فرصك في الظهور بشكل بارز في نتائج البحث التي تعتمد على الذكاء الاصطناعي.</p>
+                <h3>عناصر E-E-A-T</h3>
+                <div class="infographic">
+                    <div class="circle"><span><i class="fas fa-lightbulb"></i></span><span>الخبرة</span></div>
+                    <div class="circle"><span><i class="fas fa-user-graduate"></i></span><span>الخبرة</span></div>
+                    <div class="circle"><span><i class="fas fa-award"></i></span><span>السلطة</span></div>
+                    <div class="circle"><span><i class="fas fa-shield-alt"></i></span><span>الموثوقية</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" onclick="toggleStep(this)">
+            <h2>
+                <i class="fas fa-user-tie section-icon"></i>
+                الخطوة 2: أثبت أنك الخبير
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </h2>
+            <div class="step-content">
+                <p>يريد الذكاء الاصطناعي أن يعرف من يقف وراء المحتوى. الشفافية تبني الثقة:</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i><strong>اذكر اسم المؤلف بوضوح:</strong> يجب أن يكون لكل مقال مؤلف واضح. تجنب استخدام أسماء عامة مثل "مسؤول الموقع".</li>
+                    <li><i class="fas fa-check-circle"></i><strong>اربط بالشهادات والسير الذاتية:</strong> قم بإنشاء صفحة سيرة ذاتية مفصلة للمؤلف واربط بها من كل مقال. قم بتضمين روابط للملفات الشخصية على الشبكات الاجتماعية المهنية مثل LinkedIn.</li>
+                    <li><i class="fas fa-check-circle"></i><strong>ادعم ادعاءاتك:</strong> لا تقدم ادعاءات بدون دليل. استشهد بمصادر موثوقة، وأشر إلى دراسات الحالة، وقدم بيانات وإحصاءات لدعم نقاطك.</li>
+                    <li><i class="fas fa-check-circle"></i><strong>استخدم العناوين المنظمة:</strong> يساعد استخدام H1, H2, H3 بشكل صحيح في تنظيم المحتوى وجعله أسهل في الفهم لكل من المستخدمين ومحركات البحث.</li>
+                </ul>
+                <p>تذكر دائمًا: المحتوى المجهول المصدر يفتقر إلى المصداقية. لا يوجد اسم = لا ثقة.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Menaverse.online. جميع الحقوق محفوظة.</p>
+        <p><a href="https://www.menaverse.online" target="_blank">www.menaverse.online</a></p>
+    </div>
+
+    <script>
+        function toggleStep(element) {
+            const content = element.querySelector('.step-content');
+            const isActive = element.classList.contains('active'); // Check if the clicked step is currently active
+
+            // Close all other active step-contents and their parent .step elements
+            document.querySelectorAll('.step.active').forEach(stepElement => {
+                const stepContent = stepElement.querySelector('.step-content');
+                if (stepElement !== element && stepContent.style.maxHeight !== '0px') { // Check if it's a different active element
+                    stepContent.style.maxHeight = '0'; // Collapse content
+                    stepElement.classList.remove('active'); // Remove active class from parent
+                }
+            });
+
+            // Toggle the clicked step
+            if (isActive) {
+                // If currently active, close it
+                content.style.maxHeight = '0'; // Collapse content
+                element.classList.remove('active'); // Remove active class from parent
+            } else {
+                // If not active, open it
+                content.style.maxHeight = content.scrollHeight + 'px'; // Expand content to its full height
+                element.classList.add('active'); // Add active class to parent
+            }
+        }
+
+        // Back to top button functionality
+        let mybutton; // Declare it here
+
+        window.onload = function() {
+            // Initialize mybutton and set up scroll listener after the DOM is fully loaded
+            mybutton = document.getElementById("backToTopBtn");
+            window.onscroll = function() {scrollFunction()};
+        };
+
+        function scrollFunction() {
+            // Ensure mybutton exists before trying to access its properties
+            if (mybutton) {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+
+</body>
+</html>
